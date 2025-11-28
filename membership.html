@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join Vinada Club</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/join.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo"><img src="img/vinada_logo.png" alt="Vinada logo" />VINADA CLUB</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="meet-executive.html">Team</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="contact.html" class="active">Join Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="join-section">
+      <div class="container">
+        <h1>Join the Vinada Club</h1>
+        <p>Fill out the form below to become a part of our vibrant community!</p>
+
+        <form action="https://example.com/submit" method="POST" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name*</label>
+            <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="Enter your full name" />
+            <span class="error-message">Please enter your name (min 2 characters).</span>
+          </div>
+
+          <div class="form-group">
+            <label for="emailAddress">Email Address*</label>
+            <input type="email" id="emailAddress" name="emailAddress" required placeholder="Enter your email" />
+            <span class="error-message">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country*</label>
+            <input type="text" id="country" name="country" required placeholder="Enter your country" />
+            <span class="error-message">Please enter your country.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number*</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="^\+?[0-9\s\-]{7,15}$" placeholder="+1234567890" />
+            <span class="error-message">Please enter a valid phone number.</span>
+          </div>
+
+          <button type="submit" class="btn-submit">Join Now</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Vinada Club — University of the Southern Caribbean</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple form validation UI 
+    document.querySelector("form").addEventListener("submit", function (e) {
+      const form = e.target;
+      let valid = true;
+      form.querySelectorAll("[required]").forEach(input => {
+        if (!input.checkValidity()) {
+          valid = false;
+          input.nextElementSibling.style.display = "block";
+        } else {
+          input.nextElementSibling.style.display = "none";
+        }
+      });
+      if (!valid) e.preventDefault();
+    });
+  </script>
+</body>
+</html>
