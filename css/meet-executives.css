@@ -1,0 +1,197 @@
+:root {
+  --vinada-navy: #0b3b5b;
+  --vinada-teal: #1f9aa7;
+  --vinada-bg: #f4f7fb;
+  --vinada-card-text: #ffffff;
+}
+
+/* Page background */
+body {
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: var(--vinada-bg);
+  color: #122028;
+}
+/* NAVIGATION */
+header {
+    background: #0B3B5B;
+    padding: 15px 0;
+    color: white;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+     
+}
+.logo img{
+     height: 80px;   /* adjust this size */
+    width: auto;    /* keeps proportions */
+    vertical-align: middle; /* aligns nicely with text */
+    margin-right: 10px;
+
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    text-decoration: underline;
+}
+/* Hero heading */
+.executives-hero {
+  padding: 60px 0 30px;
+  text-align: center;
+}
+
+.exec-page-title {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  margin-bottom: 0.4rem;
+  color: var(--vinada-navy);
+}
+
+.exec-page-subtitle {
+  margin: 0 auto;
+  max-width: 520px;
+  font-size: 0.96rem;
+  color: #4a5b68;
+}
+
+/* Grid layout */
+.executives-grid {
+  padding: 10px 0 60px;
+}
+
+.exec-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Executive cards with background images */
+.exec-card {
+  position: relative;
+  min-height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: flex-end;
+  isolation: isolate;
+}
+
+/* Dark overlay holding text */
+.exec-overlay {
+  width: 100%;
+  padding: 16px 18px 18px;
+  background: linear-gradient(
+    to top,
+    rgba(3, 12, 25, 0.8),
+    rgba(3, 12, 25, 0.35),
+    transparent
+  );
+  color: var(--vinada-card-text);
+}
+
+.exec-role {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.2rem;
+  color: #bfe7f0;
+}
+
+.exec-name {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+
+.exec-program {
+  margin: 0 0 0.45rem;
+  font-size: 0.85rem;
+  color: #e3f4ff;
+}
+
+.exec-bio {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Hover/focus effect */
+.exec-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.2s ease;
+  z-index: -1;
+}
+
+.exec-card:hover::before,
+.exec-card:focus-within::before {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* One background image per executive (images stored in /img) */
+.exec-president {
+  background-image: url("../img/president.jpg");
+}
+
+.exec-vp-internal {
+  background-image: url("../img/vp-internal.jpg");
+}
+
+.exec-vp-external {
+  background-image: url("../img/vp-external.jpg");
+}
+
+.exec-secretary {
+  background-image: url("../img/secretary.jpg");
+}
+
+.exec-treasurer {
+  background-image: url("../img/treasurer.jpg");
+}
+
+.exec-events {
+  background-image: url("../img/events-coord.jpg");
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .exec-overlay {
+    padding: 14px;
+  }
+
+  .exec-card {
+    min-height: 220px;
+  }
+}
+
+/* FOOTER */
+footer {
+    background: #122028;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
